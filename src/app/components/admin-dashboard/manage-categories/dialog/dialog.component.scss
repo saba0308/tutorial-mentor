@@ -1,0 +1,34 @@
+tm-card {
+    tm-card-header {
+        span {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            color: #31384F;
+
+        }
+
+        tm-card-body {
+          
+              
+                .invalid-feedback{
+                    color: red;
+                }
+             .form-group{
+                    .labelClass {
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #838795;
+                    }
+                    
+                }
+                
+            
+        }
+    }
+}

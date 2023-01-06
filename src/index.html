@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MangoMentors</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .toggleBox{
+    width:20px;
+    height:20px;
+}
+</style>
+</head>
+<body>
+  <script>
+    function tag(){
+    var url = document.forms["frm"]["url"].value;
+    if(url.startsWith("http://")){
+        let len = url.length - 1;
+        let tmp = url.substr(7,len);
+        url = tmp;
+    }
+    else if(url.startsWith("https://")){
+        let len = url.length -1;
+        let tmp = url.substr(8,len);
+        url = tmp;
+    }
+    else{
+        console.log("Invalid url");
+        url = "";
+    };
+   // console.log(url);
+    if(url.startsWith("youtu.be/")){
+            let leng = url.length - 1;
+            let temp = url.substr(9,leng);
+            url = temp;
+        }
+    else if(url.startsWith("youtube.com/watch?v=")){
+            let leng = url.length - 1;
+            let temp = url.substr(20,leng);
+            url = temp;
+        }
+    else if(url.startsWith("m.youtube.com/watch?v=")){
+            let leng = url.length - 1;
+            let temp = url.substr(22,leng);
+            url = temp;
+        }
+    else if(url.startsWith("www.youtube.com/watch?v=")){
+            let leng = url.length - 1;
+            let temp = url.substr(24,leng);
+            url = temp;
+        }
+        else {
+           console.log("Invalid url");
+           url = "";
+        }
+  return url;
+};
+function fetch(){
+  let uri =`https://img.youtube.com/vi/${tag()}/sddefault.jpg`;
+    let a = document.getElementById("myimg");
+    a.src=uri;
+    var x = document.getElementById("youtubeView");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  
+    let youtubeTitle=document.forms["frm"]["categoryTitle"].value;
+    document.getElementById('youtubeTitle').innerHTML=youtubeTitle
+}
+  </script>
+  <app-root></app-root>
+</body>
+</html>

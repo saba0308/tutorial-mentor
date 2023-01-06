@@ -1,0 +1,21 @@
+<div class="listConatiner">
+ <div class="listCard" *ngFor="let library of libraryData">
+        <div class="imageContainer"><img src="../../../../../assets/images/{{library.image}}" alt=""></div>
+        <div class="bodyContainer">
+            <div class="titleContainer"> {{library.title}}</div>
+            <div class="descriptionContainer">
+                {{library.description}}
+            </div>
+            <div class="categoryContainer"><img width="20px" height="20px" src="../../../../../assets/icons/folder-3.svg" alt=""> <span>{{library.category}}</span></div>
+            <div class="detailsContainer">
+                  <div class="dateContainer"><img width="20px" height="20px" src="../../../../../assets/icons/calender.svg" alt=""> <span>{{library.date}}</span></div>
+                  <div class="mediaContainer"><img width="20px" height="20px"src="../../../../../assets/icons/{{library.mediaIcon}}" alt=""> <span>{{library.media}}</span></div>
+                  <div class="durationContainer"><img width="20px" height="20px" src="../../../../../assets/icons/clock.svg" alt=""> <span>{{library.duration}}</span></div>
+        
+            </div>
+        </div>
+        <button tmButton ghost [tmContextMenu]="items"class="menuBar">
+     <img src="../../../../../assets/icons/menu.svg" alt="">
+        </button>
+ </div>
+</div>

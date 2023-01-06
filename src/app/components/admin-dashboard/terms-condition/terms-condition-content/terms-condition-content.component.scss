@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+
+
+        .title {
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 36px;
+            color: #31384F;
+
+        }
+
+
+    }
+
+    .content {
+        .display {
+            h2 {
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                color: #0269F1;
+            }
+
+            h4{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 24px;
+                color: #31384F;
+
+            }
+
+            p {
+                font-family: 'Poppins';
+                font-style: normal;
+          
+                font-size: 14px;
+                line-height: 24px;
+            
+
+            }
+        }
+    }
+}

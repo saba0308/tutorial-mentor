@@ -1,0 +1,90 @@
+<div class="content">
+    <div class="header">
+        <div class="headerTitle">Manage Categories
+            <svg (click)="open()" width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 12.0081V21.7765" stroke="#0269F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.8889 16.8923H11.1111" stroke="#0269F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2476 3.57166H9.7524C5.39685 3.57166 2.66669 6.65443 2.66669 11.0185V22.7914C2.66669 27.1555 5.38415 30.2383 9.7524 30.2383H22.2476C26.6159 30.2383 29.3334 27.1555 29.3334 22.7914V11.0185C29.3334 6.65443 26.6159 3.57166 22.2476 3.57166Z" stroke="#0269F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+    </div>  <tm-form-field> <input
+    tmInput
+    type="text"
+    id="filter-text-box"
+    placeholder="search"
+    (input)="onFilterTextBoxChanged()"
+     /> <button tmSuffix tmButton ghost >
+        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10.6876" cy="9.80553" r="7.49047" stroke="#31384F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.8973 15.4043L18.834 18.3334" stroke="#31384F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+      </button>
+</tm-form-field>
+</div>
+
+
+   
+
+    <ag-grid-angular
+    style="width: 900px; height: 530px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [cacheQuickFilter]="true"
+    (gridReady)="onGridReady($event)"
+    [pagination]="true"
+    [enableRangeSelection]="true"
+    [defaultColDef]="defaultColDef"
+    [paginationPageSize]="paginationPageSize"
+    [suppressPaginationPanel]="true" 
+    (rowEditingStopped)="onRowEditingStopped($event)"
+    (rowEditingStarted)="onRowEditingStarted($event)"
+    (cellClicked)="onCellClicked($event)"
+    editType="fullRow"
+    [suppressClickEdit]="true"
+    >
+</ag-grid-angular>
+<footer>
+   
+  
+    <div class="usersCount"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.7162 16.4137H8.4962" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.7162 12.2272H8.4962" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.2513 8.05038H8.4963" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9086 2.94009C15.9086 2.94009 8.2316 2.94409 8.2196 2.94409C5.4596 2.96109 3.7506 4.77709 3.7506 7.54709V16.7431C3.7506 19.5271 5.4726 21.3501 8.2566 21.3501C8.2566 21.3501 15.9326 21.3471 15.9456 21.3471C18.7056 21.3301 20.4156 19.5131 20.4156 16.7431V7.54709C20.4156 4.76309 18.6926 2.94009 15.9086 2.94009Z" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg> <span>{{rowData.length}} Categories</span></div>
+    <div class="pagination">
+      <button tmButton (click)=" onBtPrevious()"><</button>
+      <button tmButton (click)=" onBtPageOne()">1</button>
+      <button tmButton (click)=" onBtPageTwo()">2</button>
+      <button tmButton (click)=" onBtPageThree()">3</button>
+      <button tmButton (click)=" onBtPageFour()">4</button>
+      <button tmButton (click)=" onBtNext()">></button>
+    </div>
+</footer>
+</div>
+<!-- <div style="display:flex;gap:6px;">
+    <span style="display:flex; flex-flow: row nowrap; gap:8px;padding: 10px 8px;border-radius: 8px; background: rgba(2, 105, 241, 0.15);color: rgba(2,105,241);">
+        <img width="20px" height="20px" src="../../../../assets/icons/video-2.svg" alt="">
+        <span>5</span>
+    </span>
+    <span style="display:flex; flex-flow: row nowrap; gap:8px;padding: 10px 8px;border-radius: 8px;background: rgba(255, 140, 66, 0.15);color:  rgba(255, 140, 66);">
+        <img  width="20px" height="20px" src="../../../../assets/icons/audio.svg" alt="">
+        <span>4</span>
+    </span>
+    <span style="display:flex; flex-flow: row nowrap; gap:8px;padding: 10px 8px;border-radius: 8px;background: rgba(255, 50, 157, 0.1);color: #C357F6;">
+        <img  width="20px" height="20px" src="../../../../assets/icons/doc-2.svg" alt="">
+        <span>6</span>
+    </span>
+</div> -->
+<ng-template #dialog let-data let-ref="dialogRef">
+    <tm-card>
+      <tm-card-header>Template Dialog</tm-card-header>
+      <tm-card-body>{{ data }}</tm-card-body>
+      <tm-card-footer>
+        <button tmButton (click)="ref.close()">Close Dialog</button>
+      </tm-card-footer>
+    </tm-card>
+  </ng-template>
+  

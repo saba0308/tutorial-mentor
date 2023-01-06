@@ -1,0 +1,49 @@
+<tm-layout>
+  <tm-layout-column>
+
+  </tm-layout-column>
+
+  <tm-layout-column>
+
+    <div class="content">
+      <div class="imageContainer"></div>
+      <h2>Get Started</h2>
+      <form class="signinForm" [formGroup]="signInForm" action="">
+      
+        <tm-form-field>
+          <input type="email" class="form-control" formControlName="email" fullWidth placeholder="Email" tmInput
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+
+        </tm-form-field>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors?.required">Email is required</div>
+          <div *ngIf="f.email.errors?.email">Email is invalid</div>
+        </div>
+        <tm-form-field>
+          <input placeholder="password" class="form-control" formControlName="password" [type]="getInputType()" tmInput
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          <button tmSuffix tmButton ghost (click)="toggleShowPassword()">
+            <i [class]="showPassword ? 'fa fa-eye' : 'fa fa-eye-slash'"
+              [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
+            </i>
+          </button>
+
+        </tm-form-field>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors?.required">Password is required</div>
+          <div *ngIf="f.password.errors?.minlength">
+
+
+            Password must be at least 6 characters
+          </div>
+          <div *ngIf="f.password.errors.maxlength">
+            Username must not exceed 40 characters
+          </div>
+        </div>
+        <button  (click)="signIn()" shape="semi-round" tmButton status="primary" fullWidth>Sign In</button>
+      </form>
+    </div>
+    <div class="footer">Mango Mentors @ 2022</div>
+    <!-- <div [class]="borderBox ? 'boxBorder' : 'borderLess'">hi</div> -->
+  </tm-layout-column>
+</tm-layout>

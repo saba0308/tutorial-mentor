@@ -1,0 +1,114 @@
+tm-layout {
+    tm-layout-column {
+        background-color: white;
+
+        .adminPanel {
+            display: flex;
+            flex-direction: row;
+            gap:20px;
+            .sidebar {
+                position: relative;
+                top: 0px;
+               
+                width: 300px;
+                height: 600px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+
+                .topContent {
+                    .imagecontainer {
+                        background-image: url(../../../assets/landing/image-32.png);
+                        background-size: 100% 100%;
+                        width: 280px;
+                        height: 50px;
+                    }
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        padding: 0px;
+                        gap: 6px;
+
+                        li {
+                            list-style: none;
+                            padding: 10px;
+
+                            a {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                gap: 20px;
+                                font-family: 'Poppins';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 24px;
+                                color: #31384F;
+
+                                svg {
+                                    width: 24px;
+                                }
+
+                                text-decoration: none;
+                            }
+
+
+                        }
+
+                        .active {
+                            background: #E5EFFE;
+
+                            a {
+                                color: #0269F1;
+                            }
+
+                            svg {
+                                path {
+                                    fill: #0269F1;
+                                    stroke: #0269F1;
+                                }
+
+                                .opacityBackground {
+                                    opacity: 0.4;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .bottomContent {
+                    position: relative;
+                    left: 1px;
+                }
+            }
+
+            .content {
+                width: 100%;
+                height: 100%;
+            }
+
+            .verticalButton {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:650px) and (min-width:0px) {
+
+    tm-layout {
+        tm-layout-column {
+            .adminPanel {
+                .verticalButton {
+                    display: block;
+                }
+            }
+        }
+    }
+
+}

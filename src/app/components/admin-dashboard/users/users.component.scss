@@ -1,0 +1,71 @@
+.content{
+display: flex;
+flex-direction: column;
+gap:10px;
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+    span {
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 36px;
+        color: #31384F;
+
+    }
+}
+.grid{
+    height: 500px;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+
+    .usersCount {
+        display: flex;
+        gap: 6px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #838795;
+
+        span {
+            padding: 5px;
+        }
+
+        svg {
+            path {
+                stroke: #838795
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        button {
+
+            &:focus {
+
+                background-color: #0269F1;
+                color: white;
+
+            }
+        }
+    }
+}
+.toggleBox{
+    width:20px;
+    height:20px;
+}
+}

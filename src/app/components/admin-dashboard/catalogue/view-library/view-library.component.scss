@@ -1,0 +1,94 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .headerTitle {
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 36px;
+            color: #31384F;
+
+        }
+
+        .buttonGroup {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 5px;
+            ;
+        }
+    }
+
+    .content {
+        display: flex;
+         gap:6px;
+        .videoPlayer {
+            width: 570px;
+            height: 650px;
+            padding: 20px;
+            video{
+              width:520px;
+              height:352px;
+            }
+        }
+
+        .videoDetails {
+            width: 350px;
+
+            tm-card-header {
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 6px;
+
+                .header {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 27px;
+                    text-align: right;
+                    color: #0269F1;
+                }
+            }
+
+            tm-card-body {
+                .detailsLabel {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: #838795;
+                }
+
+                .videoTitle {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #31384F;
+                }
+             .categoryContainer{
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 6px;
+             }
+             .dateContainer{
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 6px;
+             }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="header">
+        <div class="title">Terms & Condition</div>
+        <div class="buttonGroup">
+            <button tmButton shape="semi-round">Cancel</button>
+            <button tmButton status="primary" shape="semi-round">Save</button>
+         </div>
+    </div>
+ 
+
+	<div class="content">
+		<div class="display">
+			
+		</div>
+
+		<form [formGroup]="form">
+			<div class="editor">
+				<ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+				</ngx-editor-menu>
+				<ngx-editor [editor]="editor" formControlName="editorContent">
+				</ngx-editor>
+			</div>
+		</form>
+
+	
+	</div>
+</div>

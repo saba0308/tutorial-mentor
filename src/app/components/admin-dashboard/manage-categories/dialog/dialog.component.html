@@ -1,0 +1,85 @@
+<tm-card style="width:500px;">
+    <tm-card-header style="border:none; display: flex;flex-wrap: nowrap; justify-content: space-between;">
+        <span>Create Categories</span>
+        <svg (click)="dismiss()" width="25" height="25" viewBox="0 0 25 25" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M19.9189 19.3999L12.9189 12.3999M12.9189 12.3999L19.9189 5.3999M12.9189 12.3999L5.91895 19.3999M12.9189 12.3999L5.91895 5.3999"
+                stroke="#31384F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+    </tm-card-header>
+    <tm-card-body style="display: flex; flex-direction: column; gap:20px;">
+        <form class="categoryForm" [formGroup]="categoryForm" action="">
+            <div class="form-group">
+                <span style="color:#838795;" class="labelClass">Categories Name</span>
+                <input type="text" formControlName="category"   [ngClass]="{ 'is-invalid': submitted && f.category.errors }" tmInput fullWidth placeholder="Category">
+            </div>
+              <div *ngIf="submitted && f.category.errors" class="invalid-feedback" style="color: red;">
+                <div *ngIf="f.category.errors?.required">Category is required</div>
+              </div>
+            <span style="color:#838795;" class="labelClass">Thumbnail Upload</span>
+            <div class="container" style="   width: 450px;height: 88px;padding: 2rem;text-align: center;
+    border: 1px dashed #E2E3E4;position: relative;margin: 0 auto;" appDnd (fileDropped)="onFileDropped($event)">
+
+                <input formControlName="file"   [ngClass]="{ 'is-invalid': submitted && f.file.errors }" style=' opacity: 0;position: absolute;z-index: 2;width: 100%;height: 100%;top: 0;
+        left: 0;' type="file" class="fileDropRef" #fileDropRef id="fileDropRef" multiple
+                    (change)="fileBrowseHandler($any($event.target).files)" />
+                <label for="fileDropRef" style=" color: white; width: 183px;height: 44px;border-radius: 5px; background-color: #F18A02;
+        padding: 8px 16px;"><svg width="20" height="20" viewBox="0 0 21 21" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.6579 8.39164H5.8804C4.18457 8.39164 2.80957 9.76664 2.80957 11.4625L2.80957 15.525C2.80957 17.22 4.18457 18.595 5.8804 18.595H15.1554C16.8512 18.595 18.2262 17.22 18.2262 15.525V11.4541C18.2262 9.7633 16.8554 8.39164 15.1646 8.39164H14.3787"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.5179 2.73048V12.7646" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M8.08862 5.17065L10.5178 2.73065L12.9478 5.17065" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                   <span style="position: relative; top:-2px;">Browse</span>  </label>
+            </div>
+            <div *ngIf="submitted && f.file.errors" class="invalid-feedback" style="color: red;">
+                <div *ngIf="f.file.errors?.required">file is required</div>
+              </div>
+        </form>
+        <div class="files-list">
+            <div class="single-file" style="display: flex;" *ngFor="let file of files; let i = index">
+                <div class="file-icon" style="width: 20px">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+                        <polygon style="fill:#EDEADA;" points="51.5,14 37.5,0 6.5,0 6.5,58 51.5,58 " />
+                        <g>
+                            <path style="fill:#CEC9AE;"
+                                d="M16.5,23h25c0.552,0,1-0.447,1-1s-0.448-1-1-1h-25c-0.552,0-1,0.447-1,1S15.948,23,16.5,23z" />
+                            <path style="fill:#CEC9AE;"
+                                d="M16.5,15h10c0.552,0,1-0.447,1-1s-0.448-1-1-1h-10c-0.552,0-1,0.447-1,1S15.948,15,16.5,15z" />
+                            <path style="fill:#CEC9AE;"
+                                d="M41.5,29h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S42.052,29,41.5,29z" />
+                            <path style="fill:#CEC9AE;"
+                                d="M41.5,37h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S42.052,37,41.5,37z" />
+                            <path style="fill:#CEC9AE;"
+                                d="M41.5,45h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S42.052,45,41.5,45z" />
+                        </g>
+                        <polygon style="fill:#CEC9AE;" points="37.5,0 37.5,14 51.5,14 " />
+                    </svg>
+                </div>
+                <div class="info">
+                    <span class="name">
+                        {{ file?.name }}
+                    </span>
+               </div>
+        
+                <div class="delete" (click)="deleteFile(i)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18">
+                        <path fill="#B1B1B1" fill-rule="nonzero"
+                            d="M1 16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v10zm3.17-7.83a.996.996 0 0 1 1.41 0L7 9.59l1.42-1.42a.996.996 0 1 1 1.41 1.41L8.41 11l1.42 1.42a.996.996 0 1 1-1.41 1.41L7 12.41l-1.42 1.42a.996.996 0 1 1-1.41-1.41L5.59 11 4.17 9.58a.996.996 0 0 1 0-1.41zM10.5 1L9.79.29C9.61.11 9.35 0 9.09 0H4.91c-.26 0-.52.11-.7.29L3.5 1H1c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </tm-card-body>
+    <tm-card-footer style=" border:none;display:flex; justify-content: flex-end;gap:5px;">
+        <button tmButton hero shape="semi-round" (click)="dismiss()">cancel</button>
+        <button tmButton hero shape="semi-round" status="primary" (click)="createCategory()">create</button>
+    </tm-card-footer>
+</tm-card>

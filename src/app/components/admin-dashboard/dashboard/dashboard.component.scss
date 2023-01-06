@@ -1,0 +1,301 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: -15px;
+    .header {
+        h2 {
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 36px;
+            color: #31384F;
+        }
+    }
+
+    .uploadContainer {
+      
+        display: flex;
+        flex-direction: row ;
+        flex-wrap: wrap;
+        gap: 6px;
+        width: 100%;
+
+      
+
+        .uploadCard {
+            width:220px;
+            height: 100px;
+            position: relative;
+            &:nth-child(2) {
+                .verticalLine {
+                    background: #0269F1;
+                }
+            }
+
+            &:nth-child(3) {
+                .verticalLine {
+                    background: #FD7620;
+                }
+            }
+
+            &:nth-child(4) {
+                .verticalLine {
+                    background: #C357F6;
+                }
+            }
+
+            .verticalLine {
+                position: absolute;
+                width: 5px;
+                height: 74px;
+                left: 0px;
+                top: 18px;
+                background: #00A5D9;
+                border-radius: 0px 100px 100px 0px;
+
+            }
+
+            .uploadTitle {
+                position: absolute;
+                width: 167px;
+                height: 24px;
+                left: 22px;
+                top: 16px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #012545;
+            }
+
+            .uploadCount {
+                position: absolute;
+                width: 66px;
+                height: 70px;
+                left: 22px;
+                top: 42.5px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 70px;
+                color: #012545;
+
+            }
+
+            .uploadIcon {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                right: 12px;
+                top: 12.47px;
+
+            }
+        }
+    }
+
+    .recentPostContainer {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+
+        .postContainer {
+
+            width: 500px;
+
+            .postHeader {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+
+                .recentPost {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #31384F;
+
+                }
+
+                .seeAll {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 24px;
+                    text-align: right;
+                    text-decoration-line: underline;
+                    color: #0269F1;
+                }
+            }
+
+            .postContent {
+                display: flex;
+                flex-direction: column ;
+                flex-wrap: nowrap;
+
+                .postCard {
+                    display: flex;
+                    flex-flow: row nowrap;
+
+                    .imageContainer {
+                        img {
+                            border-radius: 4px;
+                        }
+                    }
+
+                    .contentContainer {
+                        padding:10px;
+                        width:280px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 6px;
+
+                        .postTitle {
+                            font-family: 'Poppins';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 20px;
+                            color: #012545;
+                        }
+
+                        .postCategory {
+                            font-family: 'Poppins';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 10px;
+                            line-height: 16px;
+                            color: #9B9B9B;
+
+                        }
+
+                        .postDetails {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                            padding: 0px;
+                            gap: 12px;
+
+                            .dateContainer {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                padding: 0px;
+                                gap: 6px;
+                                font-family: 'Poppins';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 10px;
+                                line-height: 20px;
+                                text-transform: uppercase;
+                                color: #9B9B9B;
+
+                            }
+
+                            .userDetails {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                padding: 0px;
+                                gap: 6px;
+                                font-family: 'Poppins';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 10px;
+                                line-height: 20px;
+                                text-transform: uppercase;
+                                color: #9B9B9B;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .userCategoryContainer {
+           
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+            .userContainer {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap:24px;
+               
+                .categoryTitle {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #31384F;
+                }
+
+                .categoryCard {
+                   
+                    width: 385px;
+                    height: 96px;
+                    left: 0px;
+                    top: 37px;
+                    background: #FFFFFF;
+                    border-radius: 12px;
+
+                    .cardTitle {
+                        position: absolute;
+                        top:60px ;
+                        left:12px;
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 20px;
+                        color: #012545;
+                    }
+
+                    .cardCount {
+                        position: absolute;
+                        left: 22.28px;
+                        top: 90px;
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 36px;
+                        color: #31384F;
+
+                    }
+
+                    .cardIcon {
+                        position: absolute;
+                        width: 60px;
+                        height: 60px;
+                        right: 21px;
+                        top:50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width:0px) {
+    .content{
+    .uploadContainer {
+     
+        .uploadCard {
+            width: 385px;
+        }
+    }
+}
+}

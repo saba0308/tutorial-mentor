@@ -1,0 +1,56 @@
+<div class="content">
+    <div class="header">
+        <h2>Dashboard</h2>
+    </div>
+    <div @list class="uploadContainer">
+        <div @items class="uploadCard" *ngFor="let uploadData of upload">
+            <div class="verticalLine"></div>
+           <div class="uploadTitle">{{uploadData.title}}</div>
+           <div class="uploadIcon"><img src="{{uploadData.icon}}" alt="" srcset=""></div>
+           <div class="uploadCount">{{uploadData.count}}</div>
+        </div>
+
+    </div>
+    <div class="recentPostContainer">
+        <div class="postContainer">
+            <div class="postHeader">
+                <div class="recentPost">Recent Post</div>
+                <div class="seeAll">See All</div>
+            </div>
+            <div class="postContent">
+                <div class="postCard" *ngFor="let post of postData">
+                        <div class="imageContainer">
+                            <img src="{{post.image}}" alt="">
+                        </div>
+                        <div class="contentContainer">
+                            <div class="postTitle">{{post.title}}</div>
+                            <div class="postCategory">{{post.category}}</div>
+                            <div class="postDetails"> 
+                                <div class="dateContainer">
+                                    <img src="../../../../assets/icons/calender.svg" alt="">
+                                    {{post.date}}
+                                </div>
+                                <div class="userDetails">
+                                       <img src="../../../../assets/icons/user-1.svg" alt="">
+                                 {{post.user}}
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="userCategoryContainer">
+            <div class="userContainer" *ngFor="let category of categoryData">
+                <div class="categoryTitle">{{category.name}}</div>
+                <div class="categoryCard">
+                    <div class="cardTitle">{{category.title}}</div>
+                    <div class="cardCount">{{category.count}}</div>
+                    <div class="cardIcon"><img src="{{category.icon}}" alt=""></div>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+</div>
+
+

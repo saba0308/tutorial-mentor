@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap");
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+.ag-theme-alpine {
+    /* disable all borders */
+    --ag-borders: none;
+    /* then add back a border between rows */
+    --ag-borders-row: solid 1px;
+    --ag-row-border-color: #E2E3E4;;
+}
+.gridImage{
+    display: flex;
+    padding: 5px;
+}

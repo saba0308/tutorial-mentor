@@ -1,0 +1,143 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+     
+        span {
+    
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 36px;
+            color: #31384F;
+    
+        }
+    }
+    .subHeader{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+    
+        .rightSide{
+            display: flex;
+            flex-flow:row nowrap;
+        }
+        .leftSide{
+            display: flex;
+           flex-flow:row nowrap;
+           gap:10px;
+        
+          ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            padding: 0px;
+            gap: 6px;
+
+            li {
+                list-style: none;
+                padding: 10px;
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    gap: 20px;
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #31384F;
+
+                    svg {
+                        width: 24px;
+                    }
+
+                    text-decoration: none;
+                }
+
+
+            }
+
+            .active {
+                background:  #0269F1;
+
+                a {
+                    color: #0269F1;
+                }
+
+                svg {
+                    path {
+                        
+                        stroke: #f3f4f5;
+                    }
+
+                    .opacityBackground {
+                        opacity: 0.4;
+                    }
+
+                }
+            }
+        }
+        }
+    }
+    
+    .grid{
+        height: 500px;
+    }
+    footer {
+        display: flex;
+        flex-direction: row;
+        gap: 500px;
+        justify-content: space-between;
+        background-color: white;
+        position: fixed;
+        bottom: 1.5px;
+        .usersCount {
+            display: flex;
+            gap: 6px;
+    
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: #838795;
+    
+            span {
+                padding: 5px;
+            }
+    
+            svg {
+                path {
+                    stroke: #838795
+                }
+            }
+        }
+    
+        .pagination {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+    
+            button {
+    
+                &:focus {
+    
+                    background-color: #0269F1;
+                    color: white;
+    
+                }
+            }
+        }
+    }
+  
+    }

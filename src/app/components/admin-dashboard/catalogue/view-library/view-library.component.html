@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="header">
+        <div class="headerTitle">
+            <svg (click)=" backToLibrary()" width="32" height="33" viewBox="0 0 32 33" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.6665 16.9579L25.6665 16.9579" stroke="#31384F" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M13.7329 24.9904L5.66624 16.9584L13.7329 8.92511" stroke="#31384F" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+           View library
+        </div>
+        <div class="buttonGroup">
+    
+            <button tmButton (click)=" backToLibrary()">Close</button>
+        </div>
+    </div>
+
+<div class="content">
+    <tm-card class="videoPlayer">
+        <video  controls>
+            <source src="mov_bbb.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg">
+            Your browser does not support HTML video.
+          </video>
+    </tm-card>
+     <tm-card class="videoDetails">
+         <tm-card-header style="border: none;">
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.334 3.25012H7.665C4.644 3.25012 2.75 5.38912 2.75 8.41612V16.5841C2.75 19.6111 4.635 21.7501 7.665 21.7501H16.333C19.364 21.7501 21.25 19.6111 21.25 16.5841V8.41612C21.25 5.38912 19.364 3.25012 16.334 3.25012Z" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11.9946 16.5001V12.5001" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11.9896 8.70435H11.9996" stroke="#0269F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            <span class="header">Library Info</span>                
+         </tm-card-header>
+          <tm-card-body style="border: none;">
+            <span class="detailsLabel">Title</span>
+            <p class="videoTitle">Top Crypto,Web3,&Blockchain guide</p>
+            <span class="detailsLabel">Description</span>
+            <p>Web3 is also known as the third generation of the internet. It aims to remove control from large corporations........ <span>More</span>
+            </p>
+            <div class="categoryContainer"><img width="20px" height="20px" src="../../../../../assets/icons/folder-3.svg" alt=""> <span class="detailsLabel">Block chain and Web3 development</span></div>
+            <div class="dateContainer"><img width="20px" height="20px" src="../../../../../assets/icons/calender.svg" alt=""> <span class="detailsLabel">June 24, 2022</span></div>
+          </tm-card-body>
+        </tm-card>
+</div>
+</div>

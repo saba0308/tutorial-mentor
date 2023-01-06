@@ -1,0 +1,141 @@
+<tm-layout>
+    <tm-layout-column>
+       
+        <div class="adminPanel">
+            
+            <div class="sidebar" *ngIf="expanded" @slidein>
+             
+                <div class="topContent">
+                 <div class="imagecontainer">
+        
+                 </div>
+                <ul>
+                    <li routerLinkActive="active">
+                        <a routerLink="/admin/dashboard">
+                            <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3 6.5C3 3.87479 3.02811 3 6.5 3C9.97189 3 10 3.87479 10 6.5C10 9.12521 10.0111 10 6.5 10C2.98893 10 3 9.12521 3 6.5Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path class="opacityBackground"  fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M14 6.5C14 3.87479 14.0281 3 17.5 3C20.9719 3 21 3.87479 21 6.5C21 9.12521 21.0111 10 17.5 10C13.9889 10 14 9.12521 14 6.5Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3 17.5C3 14.8748 3.02811 14 6.5 14C9.97189 14 10 14.8748 10 17.5C10 20.1252 10.0111 21 6.5 21C2.98893 21 3 20.1252 3 17.5Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M14 17.5C14 14.8748 14.0281 14 17.5 14C20.9719 14 21 14.8748 21 17.5C21 20.1252 21.0111 21 17.5 21C13.9889 21 14 20.1252 14 17.5Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/admin/users"><svg  viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="opacityBackground"
+                                    d="M17.8877 11.087C19.2827 10.891 20.3567 9.695 20.3597 8.246C20.3597 6.818 19.3187 5.634 17.9537 5.41"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path 
+                                    d="M19.7285 14.4406C21.0795 14.6426 22.0225 15.1156 22.0225 16.0906C22.0225 16.7616 21.5785 17.1976 20.8605 17.4716"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path  fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.8867 14.8541C8.6727 14.8541 5.9277 15.3411 5.9277 17.2861C5.9277 19.2301 8.6557 19.7311 11.8867 19.7311C15.1007 19.7311 17.8447 19.2491 17.8447 17.3031C17.8447 15.3571 15.1177 14.8541 11.8867 14.8541Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path class="opacityBackground" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.8867 12.0782C13.9957 12.0782 15.7057 10.3692 15.7057 8.25922C15.7057 6.15022 13.9957 4.44022 11.8867 4.44022C9.7777 4.44022 8.0677 6.15022 8.0677 8.25922C8.0597 10.3612 9.7567 12.0712 11.8587 12.0782H11.8867Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path class="opacityBackground"
+                                    d="M5.8848 11.087C4.4888 10.891 3.4158 9.695 3.4128 8.246C3.4128 6.818 4.4538 5.634 5.8188 5.41"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path 
+                                    d="M4.0439 14.4406C2.6929 14.6426 1.7499 15.1156 1.7499 16.0906C1.7499 16.7616 2.1939 17.1976 2.9119 17.4716"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+        
+                            Users
+                        </a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/admin/catalogue/library/list-view">
+                            <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.7162 16.4137H8.4962" stroke="#012545" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M15.7162 12.2272H8.4962" stroke="#012545" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M11.2513 8.05038H8.4963" stroke="#012545" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path class="opacityBackground" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M15.9086 2.94009C15.9086 2.94009 8.2316 2.94409 8.2196 2.94409C5.4596 2.96109 3.7506 4.77709 3.7506 7.54709V16.7431C3.7506 19.5271 5.4726 21.3501 8.2566 21.3501C8.2566 21.3501 15.9326 21.3471 15.9456 21.3471C18.7056 21.3301 20.4156 19.5131 20.4156 16.7431V7.54709C20.4156 4.76309 18.6926 2.94009 15.9086 2.94009Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Library
+                        </a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/admin/manage-categories">
+                            <svg  viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="opacityBackground" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.4189 15.9224C21.4189 19.5004 19.3099 21.6094 15.7319 21.6094H7.9499C4.3629 21.6094 2.2499 19.5004 2.2499 15.9224V8.12241C2.2499 4.54941 3.5639 2.44041 7.1429 2.44041H9.1429C9.8609 2.44141 10.5369 2.77841 10.9669 3.35341L11.8799 4.56741C12.3119 5.14141 12.9879 5.47941 13.7059 5.48041H16.5359C20.1229 5.48041 21.4469 7.30641 21.4469 10.9574L21.4189 15.9224Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path    d="M7.481 14.6533H16.216" stroke="#012545" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+        
+                            Manage Categories
+                        </a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/admin/terms-condition">
+                            <svg  viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="opacityBackground" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M14.7378 2.9521H8.0848C6.0048 2.9441 4.2998 4.6021 4.2508 6.6811V17.3941C4.2048 19.5071 5.8798 21.2581 7.9928 21.3051C8.0238 21.3051 8.0538 21.3061 8.0848 21.3051H16.0738C18.1678 21.2201 19.8178 19.4901 19.8028 17.3941V8.2281L14.7378 2.9521Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14.4751 2.94031V5.84931C14.4751 7.26931 15.6231 8.42031 17.0431 8.42431H19.7981"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14.2881 15.5488H8.8881" stroke="#012545" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12.2432 11.7963H8.8872" stroke="#012545" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+        
+                            Terms & Condition
+                        </a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/admin/privacy-policy">
+                            <svg  viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path  class="opacityBackground"fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.9845 21.7963C11.9845 21.7963 19.6565 19.4733 19.6565 13.0693C19.6565 6.66431 19.9345 6.16431 19.3195 5.54831C18.7035 4.93231 12.9905 2.94031 11.9845 2.94031C10.9785 2.94031 5.2655 4.93231 4.6505 5.54831C4.0345 6.16431 4.3125 6.66431 4.3125 13.0693C4.3125 19.4733 11.9845 21.7963 11.9845 21.7963Z"
+                                    stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.3859 12.0649L11.2779 13.9599L15.1759 10.0599" stroke="#012545" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Privacy Policy
+                        </a>
+                    </li>
+                </ul>
+               </div>
+               <div class="bottomContent">
+                     <button tmButton outline fullWidth  status="primary"> <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.516 7.98471V7.05171C15.516 5.01671 13.866 3.36671 11.831 3.36671H6.956C4.922 3.36671 3.272 5.01671 3.272 7.05171V18.1817C3.272 20.2167 4.922 21.8667 6.956 21.8667H11.841C13.87 21.8667 15.516 20.2217 15.516 18.1927V17.2497" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22.3095 12.6166H10.2685" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19.3812 9.70151L22.3092 12.6165L19.3812 15.5325" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Logout</button>
+               </div>
+            </div>
+            <div class="verticalButton" >
+                <svg (click)="expanded=!expanded" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.50293 9.41336H19.4411" stroke="#31384F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.50293 14.4134H19.4411" stroke="#31384F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.50293 19.4134H19.4411" stroke="#31384F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+         </div>
+            <div class="content">
+             
+        <router-outlet></router-outlet>
+            </div>
+            
+        </div>
+    </tm-layout-column>
+</tm-layout>

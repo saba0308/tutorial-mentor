@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .title {
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 36px;
+            color: #31384F;
+            
+        }
+
+        .buttonGroup {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+        }
+    }
+}
