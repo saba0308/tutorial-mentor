@@ -2,10 +2,11 @@ import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   AbstractControl,
-  FormBuilder,
+  FormBuilder,FormControl,
   FormGroup,
   Validators
 } from '@angular/forms';
+
 @Component({
   selector: 'app-create-library',
   templateUrl: './create-library.component.html',
@@ -16,25 +17,23 @@ export class CreateLibraryComponent implements OnInit {
   files: any[] = [];
   categoryForm!: FormGroup;
   submitted = false;
-
+  hidden=false;
+  selectedItemNgModel:any;
   constructor(private router:Router,private formBuilder: FormBuilder) { }
-
+  selectedItemFormControl = new FormControl();
+  show(){
+    this.hidden=!this.hidden;
+  }
   ngOnInit(): void {
     this.categoryForm = this.formBuilder.group(
       {
-       category: ['', [Validators.required]],
+       category:['',Validators.required],
        duration:['',[Validators.required]],
        categoryTitle:['',[Validators.required]],
        youtubeLink:['',[Validators.required]],
        description:['',[Validators.required]],
 
-        file: [
-          '',
-          [
-            Validators.required,
-           
-          ]
-        ]
+        
       }
     )
   }

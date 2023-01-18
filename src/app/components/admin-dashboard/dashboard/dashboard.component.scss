@@ -1,10 +1,13 @@
 .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap:6px;
     position: relative;
-    top: -15px;
+    top:-25px;
+      
     .header {
+        
+        height:60px;
         h2 {
 
             font-family: 'Poppins';
@@ -23,12 +26,14 @@
         flex-wrap: wrap;
         gap: 6px;
         width: 100%;
+   
 
       
 
         .uploadCard {
             width:220px;
-            height: 100px;
+            height: 120px;
+       
             position: relative;
             &:nth-child(2) {
                 .verticalLine {
@@ -144,10 +149,14 @@
                 .postCard {
                     display: flex;
                     flex-flow: row nowrap;
-
+                    &:hover{
+                        border: 1px solid grey;
+                        border-radius: 15px;
+                    }
                     .imageContainer {
                         img {
                             border-radius: 4px;
+                            padding: 5px;
                         }
                     }
 
@@ -199,6 +208,7 @@
                                 line-height: 20px;
                                 text-transform: uppercase;
                                 color: #9B9B9B;
+                                
 
                             }
 
@@ -232,7 +242,7 @@
                 display: flex;
                 flex-direction: column;
                 gap:24px;
-               
+             
                 .categoryTitle {
                     font-family: 'Poppins';
                     font-style: normal;
@@ -250,7 +260,10 @@
                     top: 37px;
                     background: #FFFFFF;
                     border-radius: 12px;
-
+                    &:hover{
+                        border: 1px solid grey;
+                        border-radius: 15px;
+                    }
                     .cardTitle {
                         position: absolute;
                         top:60px ;

@@ -1,3 +1,73 @@
+.subHeader{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+
+    .rightSide{
+        display: flex;
+        flex-flow:row nowrap;
+    }
+    .leftSide{
+        display: flex;
+       flex-flow:row nowrap;
+       gap:10px;
+    
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding: 0px;
+        gap: 6px;
+
+        li {
+            list-style: none;
+            padding: 10px;
+
+            a {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 20px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #31384F;
+
+                svg {
+                    width: 24px;
+                }
+
+                text-decoration: none;
+            }
+
+
+        }
+
+        .active {
+            background:  #0269F1;
+
+            a {
+                color: #0269F1;
+            }
+
+            svg {
+                path {
+                    
+                    stroke: #f3f4f5;
+                }
+
+                .opacityBackground {
+                    opacity: 0.4;
+                }
+
+            }
+        }
+    }
+    }
+}
 .listConatiner {
     display: flex;
     flex-direction: column;
@@ -7,8 +77,8 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-
-   
+        width: 920px;
+        position: relative;
         .imageContainer {
             width: 230px;
             height: 141px;
@@ -16,12 +86,35 @@
                 width: 230px;
                 height: 141px;
                 border-radius: 5px;
+                padding: 10px;
             }
+            
 
         }
+        .menuBar{
+            display: none;
+        }
+
+       &:hover{
+        border: 1px solid grey;
+        border-radius: 15px;
+        .menuBar {
+            display: block;
+            position: absolute;
+            left: 850px;
+            top:5px;
+            background-color: white;
+            opacity: 0.8;
+            border-radius: 50%;
+          img{
+            height:30px;
+          }
+          
+        }
+    }
 
         .bodyContainer {
-            padding: 10px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 6px;

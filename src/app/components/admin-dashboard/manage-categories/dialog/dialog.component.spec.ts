@@ -1,4 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { TmDialogModule } from '@tmlib/ui-sdk/dialog';
+import { TmDialogRef } from '@tmlib/ui-sdk/dialog';
+
 
 import { DialogComponent } from './dialog.component';
 
@@ -8,7 +14,14 @@ describe('DialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogComponent ]
+      imports:[TmDialogModule,FormsModule,ReactiveFormsModule],
+      declarations: [ DialogComponent ],
+      providers: [{
+        provide: TmDialogRef,
+        useValue: {
+          close: (dialogResult: any) => { }
+        }
+      }]
     })
     .compileComponents();
 

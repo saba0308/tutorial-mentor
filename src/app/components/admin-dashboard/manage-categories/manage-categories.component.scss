@@ -55,7 +55,7 @@
     
             button {
     
-                &:focus {
+                &:is(:focus) {
     
                     background-color: #0269F1;
                     color: white;

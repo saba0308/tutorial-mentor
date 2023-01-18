@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -28,7 +29,9 @@ import { TmCardModule } from '@tmlib/ui-sdk/card';
 import { TmUserModule } from '@tmlib/ui-sdk/user';
 import { TmTabsetModule } from '@tmlib/ui-sdk/tabset';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 import { TmFormFieldModule } from '@tmlib/ui-sdk/form-field';
 
 import { TmProgressBarModule } from '@tmlib/ui-sdk/progress-bar';
@@ -36,7 +39,7 @@ import { TmSpinnerModule } from '@tmlib/ui-sdk/spinner';
 import { TmSelectModule } from '@tmlib/ui-sdk/select';
 import { TmRadioModule } from '@tmlib/ui-sdk/radio';
 import { TmBadgeModule } from '@tmlib/ui-sdk/badge';
-import { TmDialogModule } from '@tmlib/ui-sdk/dialog';
+import { TmDialogModule, TmDialogService } from '@tmlib/ui-sdk/dialog';
 import { TmDatepickerModule } from '@tmlib/ui-sdk/datepicker';
 import { HttpClientModule } from '@angular/common/http';
 import { TmToastrModule } from '@tmlib/ui-sdk/toastr';
@@ -64,6 +67,12 @@ import { GridViewComponent } from './components/admin-dashboard/catalogue/grid-v
 import { CreateLibraryComponent } from './components/admin-dashboard/catalogue/create-library/create-library.component';
 import { ViewLibraryComponent } from './components/admin-dashboard/catalogue/view-library/view-library.component';
 import { LibraryLayoutComponent } from './components/admin-dashboard/catalogue/library-layout/library-layout.component';
+import { CreateLibraryUploadComponent } from './components/admin-dashboard/catalogue/create-library-upload/create-library-upload.component';
+import { RegistrationComponent } from './components/admin-dashboard/users/registration/registration.component';
+import { GridComponent } from './components/admin-dashboard/users/grid/grid.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from './services/data.service';
+import { LibraryPipe } from './services/search/library.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,12 +93,17 @@ import { LibraryLayoutComponent } from './components/admin-dashboard/catalogue/l
     CreateLibraryComponent,
     ViewLibraryComponent,
     LibraryLayoutComponent,
-    FilterDialogComponent
+    FilterDialogComponent,
+    CreateLibraryUploadComponent,
+    RegistrationComponent,
+    GridComponent,
+    LibraryPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+  
     TmThemeModule.forRoot(),
     TmLayoutModule,
     TmGridModule,
@@ -98,7 +112,7 @@ import { LibraryLayoutComponent } from './components/admin-dashboard/catalogue/l
    TmUserModule, 
    TmTabsetModule, 
    TmFormFieldModule, 
-   TmInputModule, FormsModule, ReactiveFormsModule, TmMenuModule,
+   TmInputModule, FormsModule, ReactiveFormsModule, TmMenuModule,NgbModule,
    TmContextMenuModule,
     TmButtonModule,
      TmProgressBarModule, 
@@ -114,7 +128,7 @@ import { LibraryLayoutComponent } from './components/admin-dashboard/catalogue/l
     AgGridModule,NgxEditorModule ,
     TmDatepickerModule.forRoot(),TmTimepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [TmDialogService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

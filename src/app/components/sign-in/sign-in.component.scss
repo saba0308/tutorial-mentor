@@ -1,5 +1,5 @@
 tm-layout {
- 
+//  background image 
     tm-layout-column:nth-child(1) {
         position: fixed;
         background-color: white;
@@ -38,6 +38,7 @@ tm-layout {
                display: flex;
                flex-direction: column;
                gap:10px;
+               text-align:left;
                .invalid-feedback{
                 color: red;
                }

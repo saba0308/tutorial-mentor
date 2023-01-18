@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { CatalogueComponent } from './components/admin-dashboard/catalogue/catalogue.component';
+import { CreateLibraryUploadComponent } from './components/admin-dashboard/catalogue/create-library-upload/create-library-upload.component';
 import { CreateLibraryComponent } from './components/admin-dashboard/catalogue/create-library/create-library.component';
 import { GridViewComponent } from './components/admin-dashboard/catalogue/grid-view/grid-view.component';
 import { LibraryLayoutComponent } from './components/admin-dashboard/catalogue/library-layout/library-layout.component';
@@ -23,13 +24,14 @@ const routes: Routes = [{path:'landing',component:LandingComponent},
                         {path:'dashboard',component:DashboardComponent},
                         {path:'catalogue',component:CatalogueComponent,children:[
                           {path:'library',component:LibraryLayoutComponent,children:[
-                           
+                          
                             {path:'list-view',component:ListViewComponent},
                             {path:'grid-view',component:GridViewComponent},
                             {path:'**',component:ListViewComponent},
 
                           ]},
                           {path:'create-library',component:CreateLibraryComponent},
+                          {path:'create-library-upload',component:CreateLibraryUploadComponent},
                           {path:'view-library',component:ViewLibraryComponent},
                           {path:'**',component:LibraryLayoutComponent}
 

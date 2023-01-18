@@ -115,7 +115,7 @@
                 </ul>
                </div>
                <div class="bottomContent">
-                     <button tmButton outline fullWidth  status="primary"> <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <button (click)="open2(dialog)" tmButton outline fullWidth  status="primary"> <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.516 7.98471V7.05171C15.516 5.01671 13.866 3.36671 11.831 3.36671H6.956C4.922 3.36671 3.272 5.01671 3.272 7.05171V18.1817C3.272 20.2167 4.922 21.8667 6.956 21.8667H11.841C13.87 21.8667 15.516 20.2217 15.516 18.1927V17.2497" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M22.3095 12.6166H10.2685" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M19.3812 9.70151L22.3092 12.6165L19.3812 15.5325" stroke="#0269F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -139,3 +139,14 @@
         </div>
     </tm-layout-column>
 </tm-layout>
+<ng-template #dialog let-data let-ref="dialogRef">
+  <tm-card>
+  
+    <tm-card-body>{{ data }}</tm-card-body>
+    <tm-card-footer style="display: flex; justify-content: flex-end; gap: 20px; border:none">
+      <button tmButton status="primary" (click)="logout()">Yes</button>
+
+      <button tmButton (click)="ref.close()">No</button>
+    </tm-card-footer>
+  </tm-card>
+</ng-template>

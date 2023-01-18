@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TmDialogModule } from '@tmlib/ui-sdk/dialog';
+import { TmDialogService } from '@tmlib/ui-sdk/dialog';
 import { AdminDashboardComponent } from './admin-dashboard.component';
 
 describe('AdminDashboardComponent', () => {
@@ -8,7 +9,12 @@ describe('AdminDashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminDashboardComponent ]
+    imports:[TmDialogModule.forRoot()],
+      declarations: [ AdminDashboardComponent ],
+      providers: [{
+        provide: TmDialogService,
+       
+      }]
     })
     .compileComponents();
 

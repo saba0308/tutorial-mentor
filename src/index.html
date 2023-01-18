@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>MangoMentors</title>
+  <title class="tleClass">MangoMentors</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,6 +16,9 @@
 </head>
 <body>
   <script>
+
+   
+    
     function tag(){
     var url = document.forms["frm"]["url"].value;
     if(url.startsWith("http://")){
@@ -59,8 +62,10 @@
         }
   return url;
 };
+x = document.getElementById("youtubeView");
+x.style.display="hidden"
 function fetch(){
-  let uri =`https://img.youtube.com/vi/${tag()}/sddefault.jpg`;
+    let uri =`https://img.youtube.com/vi/${tag()}/sddefault.jpg`;
     let a = document.getElementById("myimg");
     a.src=uri;
     var x = document.getElementById("youtubeView");

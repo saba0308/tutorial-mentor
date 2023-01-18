@@ -1,82 +1,111 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
+
     .header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-     
+
         .headerTitle {
-    
+
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 500;
             font-size: 32px;
             line-height: 36px;
             color: #31384F;
-    
+
         }
-        .buttonGroup{
+
+        .buttonGroup {
             display: flex;
             flex-flow: row nowrap;
-            gap: 5px;;
+            gap: 5px;
+            ;
         }
     }
-    .content{
-        .CreateLibraryForm{
+
+    .content {
+        .CreateLibraryForm {
             display: flex;
             flex-flow: row wrap;
-            gap:50px;
-            .containerData{
+            gap: 50px;
+
+            .containerData {
                 display: flex;
                 flex-flow: column;
                 width: 400px;
-                gap:10px;
-                .formField{
+                gap: 10px;
+
+                .formField {
                     display: flex;
                     flex-flow: column;
-                    gap:10px;
-                    .categoryFlex{
+                    gap: 10px;
+
+                    .categoryFlex {
                         display: flex;
                         flex-flow: row nowrap;
                         justify-content: space-between;
                     }
                 }
             }
-            .containerYoutube{
+
+            .containerYoutube {
                 width: 400px;
                 display: flex;
                 flex-flow: column;
-                gap:10px;
-                .formField{
+                gap: 10px;
+
+                .formField {
                     display: flex;
                     flex-flow: column;
-                    gap:10px;
-                   
+                    gap: 10px;
+
                 }
-                #youtubeView{
-               
+
+                #youtubeView {
+
                     border: 1px solid #E3E3e3;
-                    .content{
+                    padding: 10px;
+                  
+                    .content {
                         display: flex;
                         flex-direction: row;
-                        gap:15px;
+                        justify-content: space-around;
+
+
                     }
-                 
-                
+                    #myimg{
+                        border-radius: 10px;
+                    }
+                    #youtubeTitle {
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 24px;           
+                        color: #31384F;
+                        
+                    }
+
+
+                }
             }
-            }
-            .containerFile{
+
+            .containerFile {
                 display: flex;
                 flex-flow: column;
-                gap:10px;
-                width:100%;
-                .formField{
+                gap: 10px;
+                width: 100%;
+
+                .formField {
                     display: flex;
                     flex-flow: column;
-                    gap:10px;
-                    .categoryFlex{
+                    gap: 10px;
+
+                    .categoryFlex {
                         display: flex;
                         flex-flow: row nowrap;
                         justify-content: space-between;

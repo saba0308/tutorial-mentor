@@ -10,28 +10,44 @@
 
     </tm-card-header>
     <tm-card-body>
-        <form class="categoryForm" [formGroup]="categoryForm" action=""
-            style="display: flex; flex-direction: column; gap:20px;">
-            <div class="form-group">
+        <form class="categoryForm" action=""
+            style="display: flex; flex-direction: column; gap:40px;">
+            <div class="form-group" style="display: flex; flex-direction: column; gap:10px;">
                 <span style="color:#838795;" class="labelClass">Types</span>
-                <div style="display: flex; flex-direction: row;gap:18px; ">
-                    <button tmButton outline status="primary">All Types</button>
-                    <button tmButton>video</button>
-                    <button tmButton>Audio</button>
-                    <button tmButton>Document</button>
+                <div class="buttonGroup" style="display: flex; flex-direction: row;gap:18px; ">
+                    <div class="cat action">
+                        <label>
+                           <input type="checkbox" value="1"><span>All Types</span>
+                        </label>
+                     </div>
+                     
+                     <div class="cat comedy">
+                        <label>
+                           <input type="checkbox" value="1"><span>Video</span>
+                        </label>
+                     </div>
+                     <div class="cat action">
+                        <label>
+                           <input type="checkbox" value="1"><span>Audio</span>
+                        </label>
+                     </div>
+                     
+                     <div class="cat comedy">
+                        <label>
+                           <input type="checkbox" value="1"><span>Documnet</span>
+                        </label>
+                     </div>
                 </div>
 
             </div>
-            <div *ngIf="submitted && f.category.errors" class="invalid-feedback" style="color: red;">
-                <div *ngIf="f.category.errors?.required">Type is required</div>
-            </div>
-            <div class="form-group">
+            
+            <div class="form-group" style="display: flex; flex-direction: column; gap:10px;">
                 <span style="color:#838795;" class="labelClass">Filter by Category</span>
                 <div>
-                    <tm-select fullWidth selected="1" placeholder="Category">
+                    <tm-select  fullWidth  placeholder="Category">
                         <tm-option value="1">Blockchain</tm-option>
                         <tm-option value="2">Career Development</tm-option>
-                        <tm-option value="3">Tech Sales and Marketingn</tm-option>
+                        <tm-option value="3">Tech Sales and Marketing</tm-option>
                         <tm-option value="4">Technology Development</tm-option>
                         <tm-option value="5">Data analytics</tm-option>
                         <tm-option value="6">Advisory on career path</tm-option>
@@ -39,31 +55,37 @@
                 </div>
 
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: flex; flex-direction: column; gap:10px;">
                 <span style="color:#838795;" class="labelClass">Filter by Date</span>
-                <div style="display: flex; flex-direction: row;gap:20px; ">
-                    <button tmButton>All Date</button>
-                    <button tmButton outline status="primary">Custom Range</button>
-
+                <div class="buttonGroup" style="display: flex; flex-direction: row;gap:20px; ">
+                    <div class="cat action">
+                        <label>
+                           <input type="checkbox" value="1"><span>All Date</span>
+                        </label>
+                     </div>
+                     
+                     <div class="cat comedy">
+                        <label>
+                           <input type="checkbox" value="1"><span>Custome Range</span>
+                        </label>
+                     </div>
+                     
                 </div>
                 <div style="display: flex; flex-direction: row;gap:5px;">
                     <div style="display: flex; flex-direction: column;gap:5px; ">
                         <span style="color:#838795;" class="labelClass">Start date</span>
-                        <input tmInput placeholder="Pick Date" [tmDatepicker]="formcontrol" [formControl]="formControl">
-                        <tm-datepicker #formcontrol></tm-datepicker>
+                        <input tmInput placeholder="Pick Date"   [tmDatepicker]="formcontrol1" [formControl]="startDate">
+                        <tm-datepicker #formcontrol1 [(date)]="date" [min]="date"  [max]="maxFromDate" ></tm-datepicker>
                     </div>
                  
                     <div style="display: flex; flex-direction: column;gap:5px; ">
                         <span style="color:#838795;" class="labelClass">End Date</span>
-                        <input tmInput placeholder="Form Picker" [tmDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
-                        <tm-datepicker #ngmodel></tm-datepicker>
+                        <input tmInput placeholder="Form Picker" [tmDatepicker]="formcontrol2" [formControl]="endDate">
+                        <tm-datepicker #formcontrol2 [min]="startDate.value"  [max]="maxToDate"></tm-datepicker>
                     </div>
 
                 </div>
             </div>
-
-
-
         </form>
 
     </tm-card-body>

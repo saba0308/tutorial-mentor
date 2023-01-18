@@ -1,5 +1,60 @@
+<div class="subHeader">
+    <div class="rightSide">
+  <button (click)=" filter()" tmButton ghost style="color: #22293A;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.60851 13.8274H3.35791" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.9504 5.75029H16.201" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.27195 5.70521C7.27195 4.6255 6.39015 3.75 5.30266 3.75C4.21517 3.75 3.33337 4.6255 3.33337 5.70521C3.33337 6.78492 4.21517 7.66042 5.30266 7.66042C6.39015 7.66042 7.27195 6.78492 7.27195 5.70521Z" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6667 13.7948C16.6667 12.7151 15.7856 11.8396 14.6981 11.8396C13.6099 11.8396 12.7281 12.7151 12.7281 13.7948C12.7281 14.8745 13.6099 15.75 14.6981 15.75C15.7856 15.75 16.6667 14.8745 16.6667 13.7948Z" stroke="#012545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+      &nbsp;Filter</button>
+  <button *ngIf="hiddenValue" tmButton ghost style="color: #0269F1;">All</button>
+  <button *ngIf="hiddenValue" tmButton ghost style="color: #0269F1;">This Month</button>
+    </div>
+    <div class="leftSide">
+        <tm-form-field>
+             <input
+            tmInput
+            type="text"
+            id="filter-text-box"
+            placeholder="search"
+             [(ngModel)]="searchText"
+          />
+            <button tmSuffix tmButton ghost >
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.6876" cy="9.80553" r="7.49047" stroke="#31384F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.8973 15.4043L18.834 18.3334" stroke="#31384F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+              </button>
+        </tm-form-field>
+      <ul>
+           <li routerLinkActive="active"> <a  routerLink="/admin/catalogue/library/list-view">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5.41667C2.5 3.22899 2.52342 2.5 5.41667 2.5C8.30991 2.5 8.33333 3.22899 8.33333 5.41667C8.33333 7.60434 8.34256 8.33333 5.41667 8.33333C2.49077 8.33333 2.5 7.60434 2.5 5.41667Z" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.9336 3.9009L11.1005 3.9009" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.9336 13.0676L11.1005 13.0676" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.9609 6.93234L11.1005 6.93234" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.9609 16.099L11.1005 16.099" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 14.5834C2.5 12.3957 2.52342 11.6667 5.41667 11.6667C8.30991 11.6667 8.33333 12.3957 8.33333 14.5834C8.33333 16.771 8.34256 17.5 5.41667 17.5C2.49077 17.5 2.5 16.771 2.5 14.5834Z" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+            </a>
+        </li>
+    <li routerLinkActive="active">
+            <a routerLink="/admin/catalogue/library/grid-view">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5.41667C2.5 3.22899 2.52342 2.5 5.41667 2.5C8.30991 2.5 8.33333 3.22899 8.33333 5.41667C8.33333 7.60434 8.34256 8.33333 5.41667 8.33333C2.49077 8.33333 2.5 7.60434 2.5 5.41667Z" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6666 5.41667C11.6666 3.22899 11.6901 2.5 14.5833 2.5C17.4765 2.5 17.5 3.22899 17.5 5.41667C17.5 7.60434 17.5092 8.33333 14.5833 8.33333C11.6574 8.33333 11.6666 7.60434 11.6666 5.41667Z" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 14.5834C2.5 12.3957 2.52342 11.6667 5.41667 11.6667C8.30991 11.6667 8.33333 12.3957 8.33333 14.5834C8.33333 16.771 8.34256 17.5 5.41667 17.5C2.49077 17.5 2.5 16.771 2.5 14.5834Z" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6666 14.5834C11.6666 12.3957 11.6901 11.6667 14.5833 11.6667C17.4765 11.6667 17.5 12.3957 17.5 14.5834C17.5 16.771 17.5092 17.5 14.5833 17.5C11.6574 17.5 11.6666 16.771 11.6666 14.5834Z" stroke="#9B9B9B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    </div>
+   </div>
 <div class="listConatiner">
- <div class="listCard" *ngFor="let library of libraryData">
+ <div class="listCard" *ngFor="let library of libraryData | library: searchText; let i = index">
         <div class="imageContainer"><img src="../../../../../assets/images/{{library.image}}" alt=""></div>
         <div class="bodyContainer">
             <div class="titleContainer"> {{library.title}}</div>

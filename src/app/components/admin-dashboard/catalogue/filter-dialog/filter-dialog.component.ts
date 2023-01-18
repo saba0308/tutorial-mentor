@@ -1,5 +1,6 @@
 import { Component, OnInit,TemplateRef,Input } from '@angular/core';
-import { TmDialogService } from '@tmlib/ui-sdk/dialog';
+import { TmDateService} from '@tmlib/ui-sdk/calendar-kit';
+import{TmCalendarRange } from '@tmlib/ui-sdk/calendar';
 import {
   AbstractControl,
   FormBuilder,
@@ -9,18 +10,29 @@ import {
 
 import { TmDialogRef } from '@tmlib/ui-sdk/dialog';
 import { Router } from '@angular/router';
+import { DataService } from '../../../../services/data.service';
 @Component({
   selector: 'app-dialog',
   templateUrl: './filter-dialog.component.html',
   styleUrls: ['./filter-dialog.component.scss']
 })
 export class FilterDialogComponent implements OnInit {
+  minFromDate!: Date;
+  maxFromDate!: Date;
+  minToDate!: Date;
+  maxToDate!: Date;
+  min!:Date;
+  max!:Date;
+  date = new Date();
+  buttonValue:string='';
+
 
   files: any[] = [];
   categoryForm!: FormGroup;
   submitted = false;
-  formControl = new FormControl(new Date());
-  ngModelDate = new Date();
+  startDate = new FormControl(new Date());
+  endDate = new FormControl(new Date());
+
   ngOnInit(): void {
     this.categoryForm = this.formBuilder.group(
       {
@@ -37,15 +49,23 @@ export class FilterDialogComponent implements OnInit {
   }
  
 
-  constructor(protected ref: TmDialogRef<FilterDialogComponent>,private formBuilder: FormBuilder) {}
+  constructor(private dataService: DataService,protected dateService: TmDateService<Date>,protected ref: TmDialogRef<FilterDialogComponent>,private formBuilder: FormBuilder) {
+
+    this. minFromDate!= this.dateService.addMonth(this.dateService.today(), -1);
+    this. maxFromDate! = this.dateService.addMonth(this.dateService.today(),0);
+    this. maxToDate! = this.dateService.addMonth(this.dateService.today(),0);
+    this.date = dateService.today();
+    this.date.setDate(1);
+    this.min = dateService.addDay(this.date,-23);
+    this.max = dateService.addDay(this.date, 23);
+    
+
+  }
   get f(): { [key: string]: AbstractControl } {
     return this.categoryForm.controls;
   }
   filterLibrary() {
-    this.submitted = true;
-    if (this.categoryForm.invalid) {
-      return;
-    }
+    this.dataService.setBooleanToTrue(true);
     this.ref.close();
 
   }

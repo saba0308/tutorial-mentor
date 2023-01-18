@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,TemplateRef  } from '@angular/core';
+
+import { TmDialogService } from '@tmlib/ui-sdk/dialog';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -17,12 +20,13 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         animate(250, style({ transform: 'translateX(-100%)' }))
       ])
     ])
-  ]
+  ],
+  providers: [TmDialogService]
 })
 
 export class AdminDashboardComponent implements OnInit {
   expanded: boolean = true;
-  constructor() { }
+  constructor(private router:Router,private dialogService: TmDialogService) { }
 
   ngOnInit(): void {
   }
@@ -31,5 +35,13 @@ export class AdminDashboardComponent implements OnInit {
   toggleMenu(){
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
+ logout(){
 
+  this.router.navigate(['/sign-in']);
+ }
+ open2(dialog: TemplateRef<any>) {
+  this.dialogService.open(
+    dialog,
+    { context: 'Are you sure do you want Logout?' });
+}
 }
